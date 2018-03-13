@@ -1,5 +1,4 @@
 This will demonstrate a hands-off complete security testing cycle for a demo application
-Ford Demo
 
 - Committing code to a GitHub repo
 - Jenkns automatically building the app and sending it to NowSecure Lab Automated
