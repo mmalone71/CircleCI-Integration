@@ -30,6 +30,7 @@ jobs:
           path: app/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
       - auto_ci/mobile_security_test:
-        auto_file: /$CIRCLE_ARTIFACTS/apk/app-debug.apk
-        auto_score: "50"
-        auto_show_status_messages: "true"
+          auto_file: /tmp/myworkspace/test.apk
+          auto_wait: "30"
+          auto_score: "50"
+          auto_show_status_messages: "true"
