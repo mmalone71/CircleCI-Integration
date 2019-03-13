@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  auto_ci: nowsecure/ci-auto-orb
 jobs:
   build:
     working_directory: ~/code
