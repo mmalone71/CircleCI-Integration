@@ -27,12 +27,9 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run Tests
-          command: ./gradlew lint test
-      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: app/build/reports
-          destination: reports
-      - auto_test/mobile_security_test:
-          auto_file: cp $CIRCLE_ARTIFACTS/apk/app-debug.apk
-          auto_wait: "30"
-          auto_score: "50"
-          auto_show_status_messages: "true"
+          command: ./gradlew clean assembleDebug
+    auto_test/mobile_security_test:
+      auto_file: cp $CIRCLE_ARTIFACTS/apk/app-debug.apk
+      auto_wait: "30"
+      auto_score: "50"
+      auto_show_status_messages: "true"
