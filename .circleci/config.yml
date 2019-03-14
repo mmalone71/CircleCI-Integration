@@ -1,32 +1,17 @@
-version: 2
+version: 2.1
 orbs:
   auto_test: nowsecure/ci-auto-orb@1.0.5
-
 jobs:
   build:
-    working_directory: ~/code
     docker:
-      - image: circleci/android:api-28
-    environment:
-      JVM_OPTS: -Xmx3200m
+      - image: circleci/openjdk:8-jdk
     steps:
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
-          command: sudo chmod +x ./gradlew
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Run Tests
-          command: ./gradlew clean assembleDebug
+      - attach_workspace:
+          at: /tmp/myworkspace
+      - checkout
+      - run: cp apkpure_app_887.apk /tmp/myworkspace/test.apk
       - auto_test/mobile_security_test:
-          auto_file: $CIRCLE_ARTIFACTS/apk/app-debug.apk
+          auto_file: /tmp/myworkspace/test.apk
           auto_wait: "30"
           auto_score: "50"
           auto_show_status_messages: "true"
