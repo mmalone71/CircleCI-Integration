@@ -29,6 +29,8 @@ jobs:
           name: Run Tests
           command: ./gradlew clean assembleDebug
   test:
+    docker:
+      - image: circleci/android:api-28
     steps:
       - auto_test/mobile_security_test:
           auto_file: cp $CIRCLE_ARTIFACTS/apk/app-debug.apk
