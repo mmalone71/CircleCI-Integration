@@ -9,7 +9,7 @@ jobs:
       - attach_workspace:
           at: /tmp/myworkspace
       - checkout
-      - run: cp apkpure_app_887.apk /tmp/myworkspace/test.apk
+      - run: cp anydo39.apk /tmp/myworkspace/test.apk
       - auto_test/mobile_security_test:
           auto_file: /tmp/myworkspace/test.apk
           auto_wait: "30"
