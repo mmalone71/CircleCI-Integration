@@ -30,6 +30,7 @@ jobs:
       uses: blawrencens/nowsecure-actions-integration@0.2.0
       env:
         file_path: $GITHUB_WORKSPACE/anydo39.apk
+      run: echo $file_path
       with:
         # Please provide the path for the app to be uploaded
         app-path: $file_path
