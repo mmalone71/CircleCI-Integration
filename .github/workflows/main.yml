@@ -32,7 +32,7 @@ jobs:
         file_path: $GITHUB_WORKSPACE/anydo39.apk
       with:
         # Please provide the path for the app to be uploaded
-        app-path: file_path
+        app-path: $file_path
         # Please provide the API Key for NowSecure Platform
         api-key: ${{ secrets.PLATFORM_API_KEY }}
         # Please provide the Group Id of the application being integrated
