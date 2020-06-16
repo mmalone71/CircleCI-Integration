@@ -27,7 +27,7 @@ jobs:
         cd $GITHUB_WORKSPACE
         ls
     - name: NowSecure Platform Integration
-      uses: blawrencens/nowsecure-actions-integration@0.3.2
+      uses: blawrencens/nowsecure-actions-integration@0.3.3
       with:
         # Please provide the path for the app to be uploaded
         app-path: "/home/runner/work/CircleCIIntegration/CircleCIIntegration/anydo39.apk"
