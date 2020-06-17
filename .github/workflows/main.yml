@@ -15,7 +15,7 @@ jobs:
       uses: blawrencens/nowsecure-actions-integration@1.0.3
       with:
         # Please provide the path for the app to be uploaded
-        app-path: "/home/runner/work/CircleCIIntegration/CircleCIIntegration/anydo39.apk"
+        app-path: "/home/runner/work/CIIntegration/CIIntegration/anydo39.apk"
         # Please provide the API Key for NowSecure Platform
         api-key: ${{ secrets.PLATFORM_API_KEY }}
         # Please provide the Group Id of the application being integrated
