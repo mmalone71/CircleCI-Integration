@@ -15,5 +15,5 @@ jobs:
           auto_wait: "45"
           auto_score: "20"
           auto_show_status_messages: "true"
-          auto_group: "be50cb1e-f934-11e6-a267-639282966b4b"
+          auto_group: "bc608cbbc-8a0c-4601-8497-26128d73fca1"
           auto_token: $AUTO_TOKEN
